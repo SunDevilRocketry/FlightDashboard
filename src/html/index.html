@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src http://localhost:5000" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src http://localhost:5000" />
+    <title>Engine Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/main.css">
+
+    <!-- Include javscript libraries -->
+    <script src="../../static/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../static/js/jquery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <div class="container">
+            <h1>Main Title</h1>
+            <p>Current theme source: <strong id="theme-source">System</strong></p>
+
+            <button class="btn btn-secondary" id="toggle-dark-mode">Toggle Dark Mode</button>
+            <button class="btn btn-secondary" id="reset-to-system">Reset to System Theme</button>
+
+            <button class="btn btn-secondary" id="get-datetime">Get Current Time</button>
+        </div>
+        <div class="container mt-4">
+            Current Time: <span id="datetime"></span>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <span id="info"></span>
+        </div>
+    </footer>
+</body>
+
+<script src="../../static/js/renderers/render_index.js"></script>
+
+</html>
