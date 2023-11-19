@@ -18,7 +18,7 @@ const HTML_DIR = path.join(SRC_DIR, 'html')
 
 // python server constants
 const PY_DIST_FOLDER = "dist-python"
-const PY_SRC_FOLDER = "src-flask-server"
+const PY_SRC_FOLDER = "src-python"
 const PY_MODULE = "api.py"
 const PY_SOURCE = 'venv/Scripts/python.exe'
 

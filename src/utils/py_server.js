@@ -1,8 +1,9 @@
 const path = require('path')
 const { PY_DIST_FOLDER, PY_SRC_FOLDER, PY_MODULE, PY_EXE } = require('../constants')
+const { ChildProcess } = require('child_process')
 
 const isRunningInBundle = () => {
-    return require("fs").existsSync('../../dist-python')
+    return require("fs").existsSync('dist-python')
 }
 
 const getServerPath = () => {

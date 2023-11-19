@@ -2,7 +2,7 @@
 const path = require('node:path')
 const { spawn } = require('child_process')
 
-const PYTHON_DIR = "src-flask-server"
+const PYTHON_DIR = "src-python"
 const PYTHON_MAIN = "api.py"
 
 ls = spawn(

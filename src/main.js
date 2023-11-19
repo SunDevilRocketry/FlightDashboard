@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 const { startServer, killServer } = require('./utils/py_server.js')
 const { createMainWindow } = require('./index.js')
+const https = require('https')
 
 app.on('ready', startServer)        // start the python server on app load
 app.on('will-quit', killServer)     // stop the python server on app shutdown

@@ -5,41 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src http://localhost:5000" />
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src http://localhost:5000" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; script-src 'self'; connect-src http://localhost:5001;" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; script-src 'self'; connect-src http://localhost:5001;" />
     <title>Engine Dashboard</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../static/css/bootstrap/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../../static/css/bootstrap/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../../static/css/main.css">
+    <link rel="stylesheet" href="../../static/css/output.css">
 
     <!-- Include javscript libraries -->
-    <script src="../../static/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../../static/js/bootstrap/bootstrap.bundle.min.js"></script> -->
     <script src="../../static/js/jquery/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
     <main role="main">
-        <div class="container">
-            <h1>Main Title</h1>
-            <p>Current theme source: <strong id="theme-source">System</strong></p>
-
-            <button class="btn btn-secondary" id="toggle-dark-mode">Toggle Dark Mode</button>
-            <button class="btn btn-secondary" id="reset-to-system">Reset to System Theme</button>
-
-            <button class="btn btn-secondary" id="get-datetime">Get Current Time</button>
-        </div>
-        <div class="container mt-4">
-            Current Time: <span id="datetime"></span>
+        <div class="flex h-full columns-2 gap-0">
+            <div class="w-full">
+                <div class="sticky top-0 left-0 w-[20%] h-[10%]">
+                    Test
+                </div>
+                <div id="test"></div>
+                <div class="sticky top-[80%] left-0 w-[20%] h-[20%]">
+                    <gauge arc=".75" size=".8" thickness=".2" color="" data="speed1" unit="mph"></gauge>
+                </div>
+            </div>
+            <div class="w-full">
+                <div class="struct">
+                    <div class="t-0 b-10 l-0 r-20">
+                        Test
+                    </div>
+                    <div class="t-80 b-100 l-0 r-20">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed1" unit="mph"></gauge>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <span id="info"></span>
+    <!-- <div class="container mt-5">
+        <div class="row">
+            <gauge class="col-3" arc=".75" size=".8" thickness=".2" color="" data="speed1" unit="mph"></gauge>
+            <gauge class="col-3" arc=".75" size=".8" thickness=".2" color="" data="speed2" unit="mph"></gauge>
+            <gauge class="col-3" arc=".75" size=".8" thickness=".2" color="" data="speed3" unit="mph"></gauge>
+            <gauge class="col-3" arc=".75" size=".8" thickness=".2" color="" data="speed4" unit="mph"></gauge>
         </div>
-    </footer>
+        <div class="row">
+            <gauge class="col-3" arc=".75" size=".8" thickness=".2" color="" data="speed5" unit="mph"></gauge>
+            <gauge class="col-3" arc=".75" size=".8" thickness=".2" color="" data="speed6" unit="mph"></gauge>
+            <gauge class="col-3" arc=".75" size=".8" thickness=".2" color="" data="speed7" unit="mph"></gauge>
+            <gauge class="col-3" arc=".75" size=".8" thickness=".2" color="" data="speed8" unit="mph"></gauge>
+        </div>
+    </div> -->
 </body>
 
-<script src="../../static/js/renderers/render_index.js"></script>
+<script src="../../static/js/renderers/render_index.js" type="module"></script>
 
 </html>

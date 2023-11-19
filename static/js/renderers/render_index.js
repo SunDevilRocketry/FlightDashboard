@@ -1,21 +1,27 @@
-let information = $('#info');
-information.html(`This app is using Chrome (v${versions.chrome()}), Node.js (v${versions.node()}), and Electron (v${versions.electron()})`)
+import { initGauges, drawGauges } from "../utils/gauge.js";
 
-document.getElementById('toggle-dark-mode').addEventListener('click', async () => {
-    const isDarkMode = await window.darkMode.toggle();
-    document.getElementById('theme-source').innerHTML = isDarkMode ? 'Dark' : 'Light';
-});
+// let information = $('#info');
+// information.html(`This app is using Chrome (v${versions.chrome()}), Node.js (v${versions.node()}), and Electron (v${versions.electron()})`)
 
-document.getElementById('reset-to-system').addEventListener('click', async () => {
-    await window.darkMode.system();
-    document.getElementById('theme-source').innerHTML = 'System';
-});
+// document.getElementById('toggle-dark-mode').addEventListener('click', async () => {
+//     const isDarkMode = await window.darkMode.toggle();
+//     document.getElementById('theme-source').innerHTML = isDarkMode ? 'Dark' : 'Light';
+// });
 
-$('#get-datetime').on('click', async () => {
-    const datetime = await $.get('http://localhost:5000/api')
-    $('#datetime').html(datetime)
-})
+// document.getElementById('reset-to-system').addEventListener('click', async () => {
+//     await window.darkMode.system();
+//     document.getElementById('theme-source').innerHTML = 'System';
+// });
 
-$(async () => {
-    $('#get-datetime').trigger('click')
-})
+// $('#get-datetime').on('click', async () => {
+//     const datetime = await $.get('http://localhost:5001/api');
+//     $('#datetime').html(datetime);
+// });
+
+// $(async () => {
+//     $('#get-datetime').trigger('click');
+// });
+
+initGauges();
+drawGauges();
+setInterval(drawGauges, 100);
