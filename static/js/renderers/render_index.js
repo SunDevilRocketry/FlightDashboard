@@ -14,7 +14,7 @@ import { initGauges, drawGauges } from "../utils/gauge.js";
 // });
 
 // $('#get-datetime').on('click', async () => {
-//     const datetime = await $.get('http://localhost:5001/api');
+//     const datetime = await $.get('http://127.0.1.1:5002/api');
 //     $('#datetime').html(datetime);
 // });
 

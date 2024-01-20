@@ -23,7 +23,7 @@ export function initGauges() {
 }
 
 export async function drawGauges() {
-    let data = await $.get('http://localhost:5001/data');
+    let data = await $.get('http://127.0.1.1:5002/data');
     console.log(data);
     data = JSON.parse(data);
     $('canvas.gauge').each((index, element) => {

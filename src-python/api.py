@@ -1,7 +1,6 @@
 from flask import Flask
 from datetime import datetime
 import json
-import random
 import math
 
 app = Flask(__name__)
@@ -22,4 +21,4 @@ def speed_function(x):
     return 100*(math.sin(math.pi*x/10)**2)
 
 if __name__ == '__main__':
-    app.run(debug=False, port=5001)
+    app.run(debug=False, port=5002, host='127.0.1.1')

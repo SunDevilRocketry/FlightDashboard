@@ -1,7 +1,7 @@
 {
-    "name": "engine_dashboard",
+    "name": "flight_dashboard",
     "version": "1.0.0",
-    "description": "SDR Liquid Engine GUI v2",
+    "description": "SDR Flight Dashboard",
     "main": "src/main.js",
     "scripts": {
         "start": "electron .",
@@ -11,8 +11,8 @@
         "package-cleanup": "rmdir build /s /q && del api.spec /q && rmdir dist-python /s /q"
     },
     "build": {
-        "appId": "engine_dashboard",
-        "productName": "EngineDashboard",
+        "appId": "flight_dashboard",
+        "productName": "FlightDashboard",
         "linux": {
             "target": [
                 "AppImage",
@@ -25,7 +25,7 @@
         "extraResources": [
             {
                 "from": "dist-python",
-                "to": "app/dist-python",
+                "to": "dist-python",
                 "filter": [
                     "**/*"
                 ]

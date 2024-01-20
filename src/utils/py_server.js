@@ -1,6 +1,6 @@
 const path = require('path')
 const { PY_DIST_FOLDER, PY_SRC_FOLDER, PY_MODULE, PY_EXE } = require('../constants')
-const { ChildProcess } = require('child_process')
+const { ChildProcess, execFile, spawn } = require('child_process')
 
 const isRunningInBundle = () => {
     return require("fs").existsSync('dist-python')
@@ -8,21 +8,21 @@ const isRunningInBundle = () => {
 
 const getServerPath = () => {
     if (!isRunningInBundle()) {
-        return path.join(PY_SRC_FOLDER, PY_MODULE)
+        return path.join('src-python', 'api.py')
     }
     if (process.platform === "win32") {
-        return path.join(PY_DIST_FOLDER, PY_EXE)
+        return path.join('dist-python', 'api.exe')
     }
-    return path.join(PY_DIST_FOLDER, PY_MODULE)
+    return path.join('dist-python', 'api.py')
 }
 
 const createPyProc = (script) => {
     let pyProc = null
     console.log(script)
     if (isRunningInBundle()) {
-        pyProc = require("child_process").execFile(script, [])
+        pyProc = spawn(script, [])
     } else {
-        pyProc = require("child_process").spawn('python', [script])
+        pyProc = spawn('python', [script])
         if (pyProc != null) {
             // console.log(pyProc)
             console.log("Child process successfully started.")

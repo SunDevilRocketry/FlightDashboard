@@ -1,20 +1,20 @@
-# EngineDashboard
-Rev 2.0 of Liquid Engine GUI with modern framework and better UI/UX
+# Flight Dashboard
+Sun Devil Rocketry in-flight dashboard to visualize tellemetry data.
 
 
 ## Installation
 
 ### Windows
-1. Download the latest `EngineDashboard_Setup.exe` file from latest released version.
-2. Run the executable. The executable will install the Engine Dashboard on your computer like any other program.
+1. Download the latest `FlightDashboard_Setup.exe` file from latest released version.
+2. Run the executable. The executable will install the Flight Dashboard on your computer like any other program.
 
 
 ## Running the App
-- Windows: Run the EngineDashboard from the Windows start menu.
+- Windows: Run the FlightDashboard from the Windows start menu.
 
 
 ## Development
-All development work should be done in a separate branch from `main`. The suggested branch naming convention is naming the branch after the change being made or a version number.
+All development work after the initial stable version should be done in a separate branch from `main`. The suggested branch naming convention is naming the branch after the change being made or a version number.
 
 ### Setup
 1. Clone the GitHub repository.
