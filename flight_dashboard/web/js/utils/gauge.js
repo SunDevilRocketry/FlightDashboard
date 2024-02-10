@@ -7,6 +7,9 @@ function initGauges() {
         let color = $el.attr('color');
         let data = $el.attr('data');
         let unit = $el.attr('unit');
+        let title = $el.attr('title');
+        let min = $el.attr('min');
+        let max = $el.attr('max');
 
         let canvas = $("<canvas></canvas>");
         canvas.addClass("gauge");
@@ -16,6 +19,9 @@ function initGauges() {
         canvas.data('color', color);
         canvas.data('data', data);
         canvas.data('unit', unit);
+        canvas.data('title', title);
+        canvas.data('min', min);
+        canvas.data('max', max);
 
         $el.append(canvas);
     });
@@ -31,6 +37,8 @@ function _drawGauges(data) {
         let color = $gauge.data('color');
         let dataPoint = $gauge.data('data');
         let unit = $gauge.data('unit');
+        let title = $gauge.data('title');
+
         let min = $gauge.data('min');
         min = min === undefined ? 0 : min;
         let max = $gauge.data('max');
@@ -96,8 +104,14 @@ function _drawGauges(data) {
         ctx.font = (mindim/5).toString() + "px sans-serif";
         ctx.textAlign = "center";
         ctx.fillText(str_val, 0, mindim/20);
-        ctx.font = (mindim/10).toString() + "px sans-serif";
+
+        // write unit
+        ctx.font = (mindim/8).toString() + "px sans-serif";
         ctx.fillText(unit, 0, mindim/5);
+
+        // write title
+        ctx.font = (mindim/6).toString() + "px sans-serif";
+        ctx.fillText(title, 0, mindim/2)
     });
 }
 

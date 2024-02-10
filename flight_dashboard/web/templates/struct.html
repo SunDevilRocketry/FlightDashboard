@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% set stylesheets = ["main.css"] %}
+{% set pages = ({'dash': {'page': 'dash.html', 'name': 'Dashboard'}, 'setup': {'page': 'setup.html', 'name': 'Setup'}}) %}
+{% block content %}
+    <div id="wrap">
+        {% include 'navbar.html' %}
+        <div id="main" class="row">
+            {% block main_content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

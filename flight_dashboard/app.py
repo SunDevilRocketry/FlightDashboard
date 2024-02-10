@@ -1,9 +1,10 @@
-import eel
-
-import random
 import json
 import math
+import random
 from datetime import datetime
+
+import eel
+import numpy as np
 
 eel.init('web')
 
@@ -35,4 +36,13 @@ def get_gauge_data():
     seed += 0.05
     return json.dumps(data)
 
-eel.start('index.html')
+
+@eel.expose
+def get_chart_data():
+    global seed
+    return json.dumps({
+        'value': speed_function(seed),
+        'label': round(seed,2),
+    })
+
+eel.start('templates/dash.html', jinja_templates='templates')

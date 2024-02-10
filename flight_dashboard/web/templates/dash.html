@@ -1,0 +1,49 @@
+{% extends 'struct.html' %}
+{% set title = 'SDR Flight Dashboard' %}
+{% set page = 'dash' %}
+{% block main_content %}
+    <div class="col h-100">
+        <div class="row h-75">
+            <!-- <canvas id="myChart"></canvas> -->
+            <canvas id="c"></canvas>
+        </div>
+        <div class="row h-25" style="margin-left: 10%; margin-right: 10%;">
+            <div class="col-xl-6 col-gauge">
+                <div class="row h-100">
+                    <div class="col-3 h-100 p-2">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed1" unit="m/s" title="Speed" max="300"></gauge>
+                    </div>
+                    <div class="col-3 h-100 p-2">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed2" unit="mph"></gauge>
+                    </div>
+                    <div class="col-3 h-100 p-2">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed3" unit="mph"></gauge>
+                    </div>
+                    <div class="col-3 h-100 p-2">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed4" unit="mph"></gauge>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-gauge">
+                <div class="row h-100">
+                    <div class="col-3 h-100 p-2">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed5" unit="mph"></gauge>
+                    </div>
+                    <div class="col-3 h-100 p-2">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed6" unit="mph"></gauge>
+                    </div>
+                    <div class="col-3 h-100 p-2">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed7" unit="mph"></gauge>
+                    </div>
+                    <div class="col-3 h-100 p-2">
+                        <gauge arc=".75" size=".8" thickness=".2" color="" data="speed8" unit="mph"></gauge>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block end_scripts %}
+    <script src="/js/main.js"></script>
+    <script type="module" src="/js/render.js"></script>
+{% endblock %}

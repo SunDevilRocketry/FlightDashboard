@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }}</title>
+
+    <!-- Include bootstrap and font-awesome -->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome/all.css">
+    <!-- Extra CSS -->
+    {% for name in stylesheets %}
+        <link rel="stylesheet" href="/css/{{ name }}">
+    {% endfor %}
+
+    <!-- Include eel.js -->
+    <script type="text/javascript" src="/eel.js"></script>
+    <!-- Include standard JS libraries -->
+    <script type="text/javascript" src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/chartjs/chart.udm.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-3.7.1.min.js"></script>
+    <!-- Importmap for 3JS -->
+    <script type="importmap">{
+        "imports": {
+            "three": "/js/threejs/three.module.js"
+        }
+    }</script>
+    <!-- Extra header Javascript -->
+    {% for name in head_scripts %}
+        <script type="text/javascript" src="/js/{{ name }}"></script>
+    {% endfor %}
+</head>
+<body data-bs-theme="dark">
+    {% block content %}{% endblock %}
+</body>
+<script src="/js/utils/gauge.js"></script>
+{% block end_scripts %}{% endblock %}
+
+</html>

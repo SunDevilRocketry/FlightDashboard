@@ -8,6 +8,12 @@
     height: 100%;
 }
 
+#c {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 .gauge {
     width: 100%;
     height: 100%;
@@ -19,7 +25,7 @@
 }
 
 /* Large breakpoint */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .col-gauge {
         height: 100%;
     }
