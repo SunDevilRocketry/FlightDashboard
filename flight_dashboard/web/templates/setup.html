@@ -1,10 +1,49 @@
 {% extends 'struct.html' %}
 {% set title = 'SDR Flight Dashboard' %}
 {% set page = 'setup' %}
+{% set stylesheets = ["setup.css"] %}
 {% block main_content %}
     <div class="col">
-        <div class="container mt-4">
+        <div class="row h-15 pt-4">
             <h1 class="text-center w-100">Configuration Page</h1>
         </div>
+        <div class="row h-75">
+            <div class="col">
+                <form class="container needs-validation" autocomplete="off" action="#" novalidate>
+                    <h5>Data Output</h5>
+                    <div class="form-group mb-3 has-validation autocomplete-group">
+                        <label for="folder-select" class="form-label">Directory</label>
+                        <input type="text" class="form-control autocomplete" id="folder-select" name="folder" autocomplete="off" data-index="-1" aria-describedby="folder-select-help" pattern="" required>
+                        <div class="autocomplete-list d-none"></div>
+                        <div id="folder-select-validation" class="invalid-feedback">
+                            Please enter a valid directory.
+                        </div>
+                        <div id="folder-select-help" class="form-text">
+                            The folder must exist on the current machine. The home directory can be accessed using <code>~/</code>.
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="file-name" class="form-label">File Name</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="file-path"></span>
+                            <input type="text" class="form-control" id="file-name" name="fname" aria-describedby="file-path file-extension" pattern="" required>
+                            <span class="input-group-text" id="file-extension">.csv</span>
+                            <div id="file-name-validation" class="invalid-feedback">
+                                Please enter a file name.
+                            </div>
+                        </div>
+                        <div id="file-name-help" class="form-text">
+                            The file will automatically be appended with <code>.csv</code> and placed in the given directory.
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-success" type="submit">Save Configuration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+{% endblock %}
+{% block end_scripts %}
+    <script src="/js/setup.js"></script>
 {% endblock %}

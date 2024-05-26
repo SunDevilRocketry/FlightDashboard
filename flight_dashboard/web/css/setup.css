@@ -1,0 +1,16 @@
+.autocomplete-list {
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    max-height: 200px;
+    overflow-y: auto;
+    color: var(--bs-body-color);
+}
+
+.autocomplete-item {
+    padding: 0.25rem 0.75rem;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.active {
+    background-color: var(--bs-secondary-bg);
+}
